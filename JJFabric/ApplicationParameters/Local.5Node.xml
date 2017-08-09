@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/JJFabric" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="EncryptedSvcApi_InstanceCount" Value="1" />
+    <Parameter Name="EncryptedSvcApi_PartitionCount" Value="1" />
+    <Parameter Name="EncryptedSvcApi_MinReplicaSetSize" Value="3" />
+    <Parameter Name="EncryptedSvcApi_TargetReplicaSetSize" Value="3" />
+    <Parameter Name="Web1_PartitionCount" Value="1" />
+    <Parameter Name="Web1_MinReplicaSetSize" Value="3" />
+    <Parameter Name="Web1_TargetReplicaSetSize" Value="3" />
+    <Parameter Name="EncryptedService_InstanceCount" Value="1" />
+  </Parameters>
+</Application>

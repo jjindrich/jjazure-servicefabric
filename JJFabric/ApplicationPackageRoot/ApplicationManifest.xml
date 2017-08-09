@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="JJFabricType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="EncryptedSvcApi_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="EncryptedSvcApi_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncryptedSvcApi_PartitionCount" DefaultValue="1" />
+    <Parameter Name="EncryptedSvcApi_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Web1_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="Web1_PartitionCount" DefaultValue="1" />
+    <Parameter Name="Web1_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="EncryptedService_InstanceCount" DefaultValue="-1" />
+  </Parameters>
+  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
+       should match the Name and Version attributes of the ServiceManifest element defined in the 
+       ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="EncryptedSvcApiPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <DefaultServices>
+    <!-- The section below creates instances of service types, when an instance of this 
+         application type is created. You can also create one or more instances of service type using the 
+         ServiceFabric PowerShell module.
+         
+         The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
+    <Service Name="EncryptedSvcApi" ServicePackageActivationMode="ExclusiveProcess">
+      <StatelessService ServiceTypeName="EncryptedSvcApiType" InstanceCount="[EncryptedSvcApi_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+  </DefaultServices>
+  <!-- JJ added for access to certificate store -->
+  <Principals>
+    <Users>
+      <User Name="EncryptedSvcApi" AccountType="NetworkService" />
+    </Users>
+  </Principals>
+  <Policies>
+    <SecurityAccessPolicies>
+      <SecurityAccessPolicy ResourceRef="EncryptedSvcApiCert" PrincipalRef="EncryptedSvcApi" ResourceType="Certificate" />
+    </SecurityAccessPolicies>
+  </Policies>
+  <Certificates>
+    <SecretsCertificate X509FindValue="37B63D21204C52E6F1163C198AE67C055008B6BD" Name="EncryptedSvcApiCert" />
+  </Certificates>
+</ApplicationManifest>
