@@ -19,7 +19,6 @@ namespace EncryptedSvcApi
     /// </summary>
     internal sealed class EncryptedSvcApi : StatelessService
     {
-        public string Text = "a";
         public EncryptedSvcApi(StatelessServiceContext context)
             : base(context)
         { }
@@ -30,12 +29,9 @@ namespace EncryptedSvcApi
         /// <returns>The collection of listeners.</returns>
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
         {
-            // JJ read config
-            // JJ https://dzimchuk.net/using-code-package-environment-variables-in-service-fabric/
-            ConfigurationPackage configPackage = this.Context.CodePackageActivationContext.GetConfigurationPackageObject("Config");
-            SecureString mySecretValue = configPackage.Settings.Sections["JJConfigSection"].Parameters["JJHeslo"].DecryptValue();
-            string val = Common.Common.SecureStringToString(mySecretValue);
-
+            // JJ read config (better with https://dzimchuk.net/using-code-package-environment-variables-in-service-fabric/)
+            Common.Config.Init(this.Context);
+            
             return new ServiceInstanceListener[]
             {
                 new ServiceInstanceListener(serviceContext =>

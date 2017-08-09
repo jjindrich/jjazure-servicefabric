@@ -12,11 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{FD45F73E-878B-41F0-928E-61FF38DAF298}"
 	ProjectSection(SolutionItems) = preProject
+		scripts\cert-password.txt = scripts\cert-password.txt
+		scripts\cert.pfx = scripts\cert.pfx
 		scripts\encrypt.ps1 = scripts\encrypt.ps1
 		scripts\prepare.ps1 = scripts\prepare.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EncryptedSvcApi", "EncryptedSvcApi\EncryptedSvcApi.csproj", "{3AE3B3F8-EC61-4E00-A9BB-931FC80DC88C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptedSvcApi", "EncryptedSvcApi\EncryptedSvcApi.csproj", "{3AE3B3F8-EC61-4E00-A9BB-931FC80DC88C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

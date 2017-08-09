@@ -10,6 +10,7 @@ Creating self-signed certificate for demo. Check with certmgr.msc certificate ha
 ```PowerShell
 .\Scripts\prepare.ps1
 ```
+Or you can use certificate stored in Scripts folder, simply insert it in Computer Certificate Store (MMC Manage Computer Certificates).
 
 ### Step 2 - Encrypt value "mojeheslo"
 ```PowerShell
