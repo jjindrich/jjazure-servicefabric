@@ -46,3 +46,8 @@ Next, add thumbprint into ApplicationManifest.xml
 ### Step 4 - Test locally
 Open Visual Studio project and deploy into local ServiceFabric.
 Check port in ServiceManifest.xml and start browser (http://localhost:8247/api/values/5)
+
+## Deploy ServiceFabric in Azure
+Application Certificate
+When a cluster is deployed in Azure, the Azure resource provider that's responsible for creating Service Fabric clusters pulls certificates from Key Vault and installs them on the cluster VMs
+https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-cluster-creation-via-arm
