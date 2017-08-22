@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+VisualStudioVersion = 15.0.26730.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "JJFabric", "JJFabric\JJFabric.sfproj", "{88053792-B1BB-43D6-966A-D198EBF449E2}"
 EndProject
@@ -14,11 +14,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{FD45
 	ProjectSection(SolutionItems) = preProject
 		scripts\cert-password.txt = scripts\cert-password.txt
 		scripts\cert.pfx = scripts\cert.pfx
+		scripts\encrypt-dns.ps1 = scripts\encrypt-dns.ps1
 		scripts\encrypt.ps1 = scripts\encrypt.ps1
+		scripts\prepare-dns.ps1 = scripts\prepare-dns.ps1
 		scripts\prepare.ps1 = scripts\prepare.ps1
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptedSvcApi", "EncryptedSvcApi\EncryptedSvcApi.csproj", "{3AE3B3F8-EC61-4E00-A9BB-931FC80DC88C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "media", "media", "{025ED8D2-7D0B-4857-B01F-4DA7E290E272}"
+	ProjectSection(SolutionItems) = preProject
+		media\kv-policy.PNG = media\kv-policy.PNG
+		media\kv-secret.PNG = media\kv-secret.PNG
+		media\sf-conf.PNG = media\sf-conf.PNG
+		media\sf-publish.PNG = media\sf-publish.PNG
+		media\sf-sec.PNG = media\sf-sec.PNG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,5 +61,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FD45F73E-878B-41F0-928E-61FF38DAF298} = {37958305-9E3C-4180-AA5E-44D3C54BA3A7}
+		{025ED8D2-7D0B-4857-B01F-4DA7E290E272} = {37958305-9E3C-4180-AA5E-44D3C54BA3A7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C15090B-B239-468A-ACE5-672A9D8CC679}
 	EndGlobalSection
 EndGlobal

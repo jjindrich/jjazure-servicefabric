@@ -13,9 +13,17 @@ namespace EncryptedSvcApi.Common
 
         public static void Init(StatelessServiceContext context)
         {
-            ConfigurationPackage configPackage = context.CodePackageActivationContext.GetConfigurationPackageObject("Config");
-            SecureString jjHeslo = configPackage.Settings.Sections["JJConfigSection"].Parameters["JJHeslo"].DecryptValue();
-            JJHeslo = Common.SecureStringToString(jjHeslo);
+            try
+            {
+                ConfigurationPackage configPackage = context.CodePackageActivationContext.GetConfigurationPackageObject("Config");
+                SecureString jjHeslo = configPackage.Settings.Sections["JJConfigSection"].Parameters["JJHeslo"].DecryptValue();
+                JJHeslo = Common.SecureStringToString(jjHeslo);
+            }
+            catch (Exception ex)
+            {
+                JJHeslo = "Chyba: " + ex.Message;
+            }
+
         }
     }
 }

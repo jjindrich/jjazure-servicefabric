@@ -20,6 +20,9 @@
                                     AzureActiveDirectory="true"
                                     ServerCertThumbprint="0123456789012345678901234567890123456789" />
   -->
-  <ClusterConnectionParameters ConnectionEndpoint="" />
+  <ClusterConnectionParameters ConnectionEndpoint="jjfabric.westeurope.cloudapp.azure.com:19000" X509Credential="true" ServerCertThumbprint="EA83AEE57808A3DB4EC44F41B628611725971EDC" FindType="FindByThumbprint" FindValue="EA83AEE57808A3DB4EC44F41B628611725971EDC" StoreLocation="CurrentUser" StoreName="My" />
   <ApplicationParameterFile Path="..\ApplicationParameters\Cloud.xml" />
+  <UpgradeDeployment Mode="Monitored" Enabled="false">
+    <Parameters FailureAction="Rollback" Force="True" />
+  </UpgradeDeployment>
 </PublishProfile>
