@@ -91,7 +91,7 @@ Deploy new Azure ServiceFabric with reference to Azure KeyVault certificates. Co
 Provision Application Insight service first.
 Cluster configuration click Show optional settings and enter Application Insights key.
 For better SF maintenance enable Include repair manager - see article https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-patch-orchestration-application
-![ServiceFabric configuration](media/sf-diag.PNG)
+![ServiceFabric configuration](media/sf-diag.png)
 
 ### Configure KeyVault certificate
 ![ServiceFabric configuration](media/sf-sec.PNG)
